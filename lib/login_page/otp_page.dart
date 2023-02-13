@@ -16,7 +16,7 @@ class OtpPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        elevation: 0,
+        elevation: 1,
         backgroundColor: Colors.white,
         leading: GestureDetector(
           onTap: () {
