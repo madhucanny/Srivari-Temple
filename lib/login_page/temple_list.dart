@@ -86,7 +86,7 @@ class TempleList extends StatelessWidget {
                               height: 6,
                             ),
                             SizedBox(
-                              width: 250,
+                              width: MediaQuery.of(context).size.width / 1.6,
                               child: Text(
                                 logInController.templeListModel.value
                                         ?.elementAt(index)
