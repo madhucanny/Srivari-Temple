@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:login/controller/login_controller.dart';
-import 'package:pinput/pinput.dart';
+import 'package:pin_input_text_field/pin_input_text_field.dart';
 
 class OtpPage extends StatelessWidget {
   OtpPage({super.key});
@@ -16,7 +16,7 @@ class OtpPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        elevation: 1,
+        elevation: 0,
         backgroundColor: Colors.white,
         leading: GestureDetector(
           onTap: () {
@@ -46,7 +46,6 @@ class OtpPage extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: const [
                 Text(
                   'Please enter the verification code',
@@ -66,24 +65,33 @@ class OtpPage extends StatelessWidget {
             const SizedBox(
               height: 32,
             ),
-            Pinput(
-                length: 6,
-                keyboardType: TextInputType.number,
-                textInputAction: TextInputAction.next,
-                onCompleted: null,
-                autofocus: true,
+            Padding(
+              padding: EdgeInsets.only(left: 20, right: 20),
+              child: PinInputTextField(
+                pinLength: 6,
                 controller: logInController.otpController.value,
-                defaultPinTheme: PinTheme(
-                  width: 50,
-                  height: 50,
-                  textStyle: const TextStyle(
-                      fontSize: 14, fontWeight: FontWeight.w600),
-                  decoration: BoxDecoration(
-                      color: const Color(0xffffddbf),
-                      // border: Border.all(color: Color(0xffff7940)),
-                      borderRadius: BorderRadius.circular(14)),
-                )),
-            const SizedBox(
+                keyboardType: TextInputType.number,
+                enabled: true,
+                decoration: BoxLooseDecoration(
+                  bgColorBuilder: FixedColorBuilder(
+                    Color(0xffffddbf),
+                  ),
+                  strokeColorBuilder: FixedColorBuilder(
+                    Color(0xffffddbf),
+                  ),
+                  textStyle: TextStyle(fontSize: 20, color: Colors.black),
+                ),
+                autoFocus: true,
+                enableInteractiveSelection: false,
+                cursor: Cursor(
+                  width: 2,
+                  color: Color(0xffff7940),
+                  radius: Radius.circular(1),
+                  enabled: true,
+                ),
+              ),
+            ),
+            SizedBox(
               height: 32,
             ),
             logInController.start.value == 0

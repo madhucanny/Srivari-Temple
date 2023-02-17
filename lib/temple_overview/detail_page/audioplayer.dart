@@ -235,25 +235,25 @@
 //   }
 // }
 
-import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/material.dart';
+// import 'package:audioplayers/audioplayers.dart';
+// import 'package:flutter/material.dart';
 
-class AudioPlayerCard extends StatelessWidget {
-  AudioPlayerCard({super.key});
+// class AudioPlayerCard extends StatelessWidget {
+//   AudioPlayerCard({super.key});
 
-  final AudioPlayer audioPlugin = AudioPlayer();
+//   final AudioPlayer audioPlugin = AudioPlayer();
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('audio')),
-      body: Container(
-          child: ElevatedButton(onPressed: () => play(), child: Text('play'))),
-    );
-  }
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('audio')),
+//       body: Container(
+//           child: ElevatedButton(onPressed: () => play(), child: Text('play'))),
+//     );
+//   }
 
-  void play() async {
-    // await audioPlugin.play(
-    //     "https://file-examples.com/storage/feeb72b10363daaeba4c0c9/2017/11/file_example_MP3_700KB.mp3");
-  }
-}
+//   void play() async {
+//     // await audioPlugin.play(
+//     //     "https://file-examples.com/storage/feeb72b10363daaeba4c0c9/2017/11/file_example_MP3_700KB.mp3");
+//   }
+// }

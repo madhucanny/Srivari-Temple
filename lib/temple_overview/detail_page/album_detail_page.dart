@@ -97,7 +97,7 @@ class AlbumDetailPage extends StatelessWidget {
                 itemBuilder: (context, index) => VideoPlayerScreen(
                       videoURL: videoURL[index],
                     )),
-            AudioPlayerCard(),
+            // AudioPlayerCard(),
           ],
         ),
       ),

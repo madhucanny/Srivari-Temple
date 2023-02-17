@@ -53,6 +53,7 @@ class LoginController extends GetxController {
   }
 
   void verifyNumber(BuildContext context, String verificationIDReceived) {
+    if (countryCode.isEmpty) countryCode.value = '91';
     final phoneNo = '+$countryCode${logInTextField.value.text}';
     print('phoneNo$phoneNo');
     auth.verifyPhoneNumber(
